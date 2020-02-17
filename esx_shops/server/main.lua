@@ -61,12 +61,12 @@ AddEventHandler('esx_shops:buyItem', function(itemName, amount, zone)
 		if xPlayer.canCarryItem(itemName, amount) then
 			xPlayer.removeMoney(price)
 			xPlayer.addInventoryItem(itemName, amount)
-			TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'inform', text = 'You bought ' .. amount .. ' x ' .. itemName .. ' for ' .. price .. '$', length = 2500, style = { ['background-color'] = '#2f5c73', ['color'] = '#FFFFFF' } })
+			TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'inform', text = 'You bought ' .. amount .. ' x ' .. itemName .. ' for $' .. price, length = 5000, style = { ['background-color'] = '#2f5c73', ['color'] = '#FFFFFF' } })
 		else
-			TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'inform', text = 'Your backpack is too heavy to carry so many things.', length = 2500, style = { ['background-color'] = '#2f5c73', ['color'] = '#FFFFFF' } })
+			TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'inform', text = 'Your backpack is too heavy to carry so many things.', length = 5000, style = { ['background-color'] = '#2f5c73', ['color'] = '#FFFFFF' } })
 		end
 	else
 		local missingMoney = price - xPlayer.getMoney()
-		TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'inform', text = 'You dont have money, you lack ' .. ESX.Math.GroupDigits(missingMoney) .. "$", length = 2500, style = { ['background-color'] = '#2f5c73', ['color'] = '#FFFFFF' } })
+		TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'inform', text = 'You don\'t have money, you lack $' .. ESX.Math.GroupDigits(missingMoney), length = 5000, style = { ['background-color'] = '#2f5c73', ['color'] = '#FFFFFF' } })
 	end
 end)
