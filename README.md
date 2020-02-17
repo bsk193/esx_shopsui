@@ -3,6 +3,8 @@
 
 **This script adds new UI to esx_shops and esx_weaponshop.**
 
+![Image](https://i.imgur.com/ZuoC6So.png)
+
 # Credits
 
 Name | URL
